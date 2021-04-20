@@ -45,7 +45,7 @@ def f4(z):
 
 # ぴったり z==0 は入力されないものとする
 def f5(z):
-    w = (z + z.conjugate()) / abs(z)
+    w = np.where(z == 0, 0, (z + z.conjugate()) / abs(z))
     return w
 
 

@@ -61,7 +61,7 @@ def make_circle_line(r, n=200):
 #   - w: 羽の長さ
 def make_arrow_wing(p, q, w):
     if p == q:
-        return np.asarray([q, q]), np.asarray([q, q])
+        p = q - 0.001
     r = p - q
     r /= abs(r)
     a = math.pi / 6
