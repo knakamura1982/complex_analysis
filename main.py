@@ -43,7 +43,7 @@ def f4(z):
     return w
 
 
-# ぴったり z==0 は入力されないものとする
+# 連続性に関する練習問題の関数
 def f5(z):
     w = np.where(z == 0, 0, (z + z.conjugate()) / abs(z))
     return w
