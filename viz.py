@@ -185,13 +185,17 @@ def viz_function2(func):
 
 # 複素関数 func を可視化する（放射型）
 # 上記の関数 visualize を適当なパラメータの下で実行するラッパー
-def viz_function3(func):
+def viz_function3(func, flip=False):
     m = -4
     lines = []
     colors = []
     widths = []
     for k in np.arange(0.2, 2, 0.2):
-        lines.append(make_radial_line(theta=(m+4)*2*math.pi/9))
+        l = make_radial_line(theta=(m+4)*2*math.pi/9)
+        if flip:
+            lines.append(np.flip(l))
+        else:
+            lines.append(l)
         colors.append('#{0:02x}{1:02x}{2:02x}'.format(0, 128-31*m, 128+31*m))
         widths.append(3-0.2*(m+4))
         m += 1

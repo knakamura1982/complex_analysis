@@ -45,14 +45,14 @@ def f4(z):
 
 # 連続性に関する練習問題の関数
 def f5(z):
-    w = np.where(z == 0, 0, (z + z.conjugate()) / abs(z))
+    w = np.where(z == 0, 0, (z*z + z + z.conjugate()) / abs(z))
     return w
 
 
 # 関数の可視化
 if __name__ == '__main__':
-    viz_function(sq)
+    #viz_function(sq)
     #viz_function(conj)
     #viz_function2(sq)
     #viz_function2(conj)
-    #viz_function3(f5)
+    viz_function3(f5, flip=True)
